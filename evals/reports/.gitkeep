@@ -1,0 +1,6 @@
+# 审计报告目录
+
+`python evals/audit.py --rounds 1000` 会在这里生成 `audit-<时间戳>.md`。
+
+这些报告是本地产物，已被 `.gitignore` 忽略（除本文件外）。CI 每次 push 都会跑一遍，
+报告在 Actions 的日志里；需要长期留存时，把关键结论贴进 `CHANGELOG.md`。

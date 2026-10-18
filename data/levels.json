@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "updated": "2026-10-18",
+  "note": "L0–L7 水平阶梯，供 scripts/plan.py 与讲题分级使用。cf 是区间 [min,max]，usaco/cn 是同级参照。signals 是'可观测信号'，用于诊断；exits 是到下一级的最短路径。",
+  "levels": [
+    {
+      "id": "L0",
+      "zh": "零基础",
+      "en": "Absolute beginner",
+      "cf": [0, 0],
+      "usaco": "none",
+      "cn": "无",
+      "signals": ["没写过代码或只抄过 Hello World", "变量、循环、数组说不清"],
+      "exits": "4–8 周学完变量/分支/循环/数组/函数，做 60–100 道入门题"
+    },
+    {
+      "id": "L1",
+      "zh": "语法关",
+      "en": "Syntax fluency",
+      "cf": [800, 1000],
+      "usaco": "Bronze",
+      "cn": "CSP-J 第一轮",
+      "signals": ["能写 50 行以内的模拟与枚举", "会调用 sort", "不知道复杂度是什么"],
+      "exits": "8–12 周：递归、二分、前缀和、简单贪心、线性 DP、STL"
+    },
+    {
+      "id": "L2",
+      "zh": "普及",
+      "en": "Junior",
+      "cf": [1200, 1400],
+      "usaco": "Bronze",
+      "cn": "CSP-J 复赛一等",
+      "signals": ["独立写出 DFS/BFS、二分答案、0/1 背包、并查集", "CSP-J 复赛 200+"],
+      "exits": "10–16 周：图论基础、树、树状数组、区间/树形 DP、单调栈"
+    },
+    {
+      "id": "L3",
+      "zh": "提高-",
+      "en": "Lower intermediate",
+      "cf": [1400, 1600],
+      "usaco": "Silver",
+      "cn": "CSP-S 复赛 100–200",
+      "signals": ["独立写 Dijkstra、拓扑排序、树状数组、简单线段树", "会写对拍"],
+      "exits": "12–20 周：线段树进阶、最短路建模、树形 DP、状压/数位 DP、组合数学"
+    },
+    {
+      "id": "L4",
+      "zh": "提高",
+      "en": "Intermediate",
+      "cf": [1600, 1900],
+      "usaco": "Gold",
+      "cn": "NOIP 省一",
+      "signals": ["独立写 lazy 线段树、树剖、Dinic、2-SAT", "4 小时能拿 250+"],
+      "exits": "16–24 周：网络流建模、点分治、莫队、字符串算法、DP 优化"
+    },
+    {
+      "id": "L5",
+      "zh": "省选-",
+      "en": "Upper intermediate",
+      "cf": [1900, 2200],
+      "usaco": "Platinum",
+      "cn": "省队边缘",
+      "signals": ["独立写树套树、点分治、AC 自动机、斜率优化", "能读懂部分集训队论文"],
+      "exits": "20–30 周：专题突破 + 大量限时赛 + 论文精读"
+    },
+    {
+      "id": "L6",
+      "zh": "省选/NOI",
+      "en": "Advanced",
+      "cf": [2200, 2500],
+      "usaco": "Platinum",
+      "cn": "省队主力 / NOI 铜银",
+      "signals": ["独立完成 NOI 前两题", "会 CDQ、SAM、LCT、多项式", "能设计部分分策略"],
+      "exits": "以赛代练 + 论文精读 + 出题互测"
+    },
+    {
+      "id": "L7",
+      "zh": "集训队/IOI",
+      "en": "Elite",
+      "cf": [2500, 3500],
+      "usaco": "Platinum",
+      "cn": "NOI 金牌 / 集训队",
+      "signals": ["NOI 金牌或集训队", "能独立出题、写题解、做论文答辩"],
+      "exits": "国家队选拔：CTT + CTS + 论文答辩"
+    }
+  ]
+}

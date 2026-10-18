@@ -1,0 +1,37 @@
+name: audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 1000 轮抽样审计
+        run: python evals/audit.py --rounds 1000
+
+      - name: 全量矩阵（85 节点 × 11 项 + 全局检查）
+        run: python evals/audit.py --rounds all --quiet
+
+      - name: 冒烟测试：生成一份计划
+        run: python scripts/plan.py --level L3 --weeks 12 --out /tmp/plan.md && head -20 /tmp/plan.md
+
+      - name: 冒烟测试：检索
+        run: python scripts/lookup.py -q 树形dp
+
+      - name: 结构校验（3 个 JSON 都能解析）
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          for p in pathlib.Path("data").glob("*.json"):
+              json.loads(p.read_text(encoding="utf-8"))
+              print("ok", p)
+          PY

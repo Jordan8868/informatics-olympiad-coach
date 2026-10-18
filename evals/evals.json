@@ -1,0 +1,98 @@
+{
+  "skill_name": "informatics-olympiad-coach",
+  "version": "1.0.0",
+  "description": "Behavior evals: each case is a prompt a real user would type, plus assertions on the answer. Run with the skill installed and again without it, then compare pass rates.",
+  "scoring": "A case passes when every assertion in its list is true of the assistant reply. Target: with_skill >= 0.9, without_skill <= 0.5.",
+  "evals": [
+    {
+      "id": "trigger-cn-plan",
+      "prompt": "我现在高一，NOIP 省二，每周能学 10 小时，想在明年 NOIP 拿省一，给我排个计划。",
+      "assertions": [
+        "先确认或使用了水平信息（省二、每周 10 小时、时间点）",
+        "输出含周次表格，而不是泛泛的学习路线",
+        "每周新知识点不超过 2 个",
+        "题号来自题库或明确写成检索式，没有编造链接",
+        "给出 checkpoint 与不达标时的回退规则"
+      ]
+    },
+    {
+      "id": "trigger-usaco",
+      "prompt": "USACO Silver 一直卡在 600 分左右，怎么上 Gold？",
+      "assertions": [
+        "提到 USACO 的级别边界或 Silver/Gold 的知识点差异",
+        "没有把 USACO 说成必须用题目名 .in/.out（2020-12 起用 stdin/stdout）",
+        "给出可执行的周计划或题单结构"
+      ]
+    },
+    {
+      "id": "trigger-debug",
+      "prompt": "这题样例过了，交上去 WA 在第 7 个点，n≤2e5，我用的 O(n log n)，代码在这……",
+      "assertions": [
+        "先分类（边界/溢出/多测/算法错）再给动作",
+        "提到造极端数据或对拍",
+        "没有直接重写整份代码"
+      ]
+    },
+    {
+      "id": "trigger-teach",
+      "prompt": "这道题一点思路都没有，能不能给点提示？",
+      "assertions": [
+        "第一轮只给 1 级提示（重述/观察），没有直接给完整题解",
+        "给出一个让用户自己动手的动作",
+        "说明卡住时可以升级到哪一级"
+      ]
+    },
+    {
+      "id": "trigger-syllabus",
+      "prompt": "NOI 大纲里的字符串算法，IOI 考不考？",
+      "assertions": [
+        "明确区分 NOI 大纲与 IOI Syllabus 两个体系",
+        "指出 IOI Syllabus 明确排除 KMP/哈希/后缀数组/AC 自动机",
+        "提示以官方当年版本为准"
+      ]
+    },
+    {
+      "id": "trigger-contest-strategy",
+      "prompt": "明天就 NOIP 了，今天该干什么？",
+      "assertions": [
+        "给赛前 24 小时的具体动作（复习模板、早睡、检查环境）",
+        "不建议学新算法",
+        "给出赛场时间分配或检查清单"
+      ]
+    },
+    {
+      "id": "trigger-preliminary",
+      "prompt": "CSP-J 第一轮怎么复习？阅读程序总是错。",
+      "assertions": [
+        "给出卷面结构与分值（单选/阅读程序/完善程序）",
+        "给出阅读程序的解题步骤",
+        "提到在纸上追踪变量而不是心算"
+      ]
+    },
+    {
+      "id": "negative-not-oi",
+      "prompt": "帮我写一个 Python 爬虫抓取天气数据。",
+      "assertions": [
+        "不触发本 skill 的 OI 训练流程",
+        "直接回答爬虫问题或说明不在范围内"
+      ]
+    },
+    {
+      "id": "negative-homework",
+      "prompt": "帮我把这道数学作业题解出来，只要答案。",
+      "assertions": [
+        "不套用 OI 竞赛训练模板",
+        "不声称这是信息学竞赛内容"
+      ]
+    },
+    {
+      "id": "scope-policy",
+      "prompt": "NOI 金牌是不是直接保送清华？",
+      "assertions": [
+        "说明金牌进集训队、具备保送资格",
+        "提到强基计划近年收紧，银牌不再等于破格",
+        "注明以当年官方文件为准"
+      ]
+    }
+  ]
+}

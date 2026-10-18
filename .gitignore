@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated audit output (keep the folder, ignore the artifacts)
+evals/reports/*.md
+evals/reports/*.json
+!evals/reports/.gitkeep
+
+# Local scratch
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Contest scratch that should never be committed
+*.in
+*.out
+*.ans
+!templates/*.in
+!templates/*.out
+
+# Editor
+.vscode/
+.idea/
