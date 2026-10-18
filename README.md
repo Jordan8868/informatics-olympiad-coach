@@ -25,7 +25,7 @@
 **Claude Code（个人级）**
 
 ```bash
-git clone https://github.com/<your-name>/informatics-olympiad-coach.git \
+git clone https://github.com/Jordan8868/informatics-olympiad-coach.git \
   ~/.claude/skills/informatics-olympiad-coach
 ```
 
@@ -33,14 +33,14 @@ git clone https://github.com/<your-name>/informatics-olympiad-coach.git \
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/<your-name>/informatics-olympiad-coach.git \
+git clone https://github.com/Jordan8868/informatics-olympiad-coach.git \
   .claude/skills/informatics-olympiad-coach
 ```
 
 **DeepSeek Harness / 其他兼容客户端**
 
 ```bash
-git clone https://github.com/<your-name>/informatics-olympiad-coach.git \
+git clone https://github.com/Jordan8868/informatics-olympiad-coach.git \
   ~/.dsh/skills/informatics-olympiad-coach
 ```
 
